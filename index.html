@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CommuCare | Modern Digital Health & Pharmacy Partner</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- Emergency Top Bar -->
+  <div class="emergency-bar">
+    <div class="emergency-container">
+      <span><i class="fa-solid fa-truck-medical"></i> <strong>Medical Emergency?</strong> Call our 24/7 toll-free hotline: <a href="tel:999"><strong>+233 (0) 800 123 911</strong></a></span>
+      <a href="#directory" class="emergency-link">Find Nearest ER <i class="fa-solid fa-angle-right"></i></a>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo">
+        <div class="logo-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+        <span>CommuCare</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#search" class="nav-link">Find Care</a></li>
+        <li><a href="#faq" class="nav-link">FAQs</a></li>
+        <li><a href="#contact" class="nav-link btn-nav">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-container">
+      <div class="hero-content">
+        <span class="tag"><i class="fa-solid fa-shield-halved"></i> MOH & Verified Healthcare Network</span>
+        <h1>Accessible Care.<br><span>Healthier Communities.</span></h1>
+        <p>Connecting you with top-rated local doctors, licensed pharmacies, and emergency services—all in one seamless platform.</p>
+        
+        <!-- Quick Search Bar Widget -->
+        <div class="search-box" id="search">
+          <div class="search-field">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="searchInput" placeholder="Search doctor, clinic, or specialty...">
+          </div>
+          <div class="search-field select-field">
+            <i class="fa-solid fa-location-dot"></i>
+            <select id="locationSelect">
+              <option value="">All Regions</option>
+              <option value="accra">Accra Central</option>
+              <option value="kumasi">Kumasi</option>
+              <option value="takoradi">Takoradi</option>
+              <option value="tamale">Tamale</option>
+            </select>
+          </div>
+          <button class="btn btn-primary search-btn" onclick="handleSearch()"><i class="fa-solid fa-search"></i> Search</button>
+        </div>
+
+        <div class="hero-badges">
+          <span><i class="fa-solid fa-circle-check"></i> 100% Certified Doctors</span>
+          <span><i class="fa-solid fa-circle-check"></i> Instant Online Prescriptions</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content Container -->
+  <main class="main-container">
+
+    <!-- Trust Accreditation Badges -->
+    <section class="trust-bar">
+      <div class="trust-item"><i class="fa-solid fa-award"></i> <span>MoH Accredited</span></div>
+      <div class="trust-item"><i class="fa-solid fa-lock"></i> <span>Encrypted Health Data</span></div>
+      <div class="trust-item"><i class="fa-solid fa-user-shield"></i> <span>Verified Pharmacists</span></div>
+      <div class="trust-item"><i class="fa-solid fa-clock"></i> <span>24/7 Teleconsults</span></div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+      <div class="section-header">
+        <span class="sub-title">What We Offer</span>
+        <h2 class="section-title">Comprehensive Digital Health Services</h2>
+      </div>
+      <div class="services-grid">
+        
+        <div class="service-card">
+          <div class="card-badge">Popular</div>
+          <div class="service-icon icon-green"><i class="fa-solid fa-prescription-bottle-medical"></i></div>
+          <div class="service-info">
+            <h3>E-Pharmacy & Prescriptions</h3>
+            <p>Order authentic medications online with verified doorstep delivery and digital refills.</p>
+            <button class="link-btn" onclick="openModal('E-Pharmacy', 'Order genuine prescription and OTC medicines online. Upload your prescription for verification by licensed pharmacists with same-day express delivery.')">Explore Pharmacy <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon icon-blue"><i class="fa-solid fa-user-doctor"></i></div>
+          <div class="service-info">
+            <h3>Virtual Teleconsultation</h3>
+            <p>Connect with licensed physicians via secure video or chat sessions from anywhere.</p>
+            <button class="link-btn" onclick="openModal('Virtual Teleconsultation', 'Book 1-on-1 confidential appointments with specialist doctors. Get diagnostic advice and digital prescriptions instantly.')">Book Consult <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon icon-purple"><i class="fa-solid fa-hospital-user"></i></div>
+          <div class="service-info">
+            <h3>Healthcare Directory</h3>
+            <p>Locate accredited emergency clinics, diagnostic labs, and specialty centers nearby.</p>
+            <button class="link-btn" onclick="openModal('Healthcare Directory', 'Search thousands of verified hospitals and emergency clinics sorted by specialty, distance, user rating, and insurance coverage.')">Find Facilities <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon icon-orange"><i class="fa-solid fa-notes-medical"></i></div>
+          <div class="service-info">
+            <h3>Health Hub & Wellness</h3>
+            <p>Access evidence-based articles, symptom checkers, and personalized preventive care tips.</p>
+            <button class="link-btn link-orange" onclick="openModal('Health Hub', 'Read expert medical articles reviewed by board-certified doctors covering preventative care, mental health, and chronic illness management.')">Read Articles <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Split Section: Health Tip & Stats -->
+    <section class="info-grid-section">
+      <!-- Health Tip Card -->
+      <div class="content-card tip-card">
+        <h3 class="card-header-title"><i class="fa-solid fa-lightbulb"></i> Daily Health Insight</h3>
+        <div class="tip-content">
+          <div class="tip-icon"><i class="fa-solid fa-glass-water"></i></div>
+          <div class="tip-details">
+            <h4>Hydration and Cellular Repair</h4>
+            <p>Drinking 2.5–3 liters of water daily supports metabolic function and enhances cognitive performance.</p>
+            <button class="link-btn" onclick="openModal('Hydration Tips', 'Adequate fluid intake helps transport nutrients throughout the body, aids digestion, regulates body temperature, and keeps joint cartilage lubricated.')">Read Full Guide <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Animated Quick Health Stats Card -->
+      <div class="content-card stats-card" id="statsSection">
+        <h3 class="card-header-title"><i class="fa-solid fa-chart-line"></i> Our Community Impact</h3>
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-icon icon-green"><i class="fa-solid fa-user-group"></i></div>
+            <div>
+              <h3 class="counter" data-target="15000">0</h3>
+              <p>Patients Served</p>
+            </div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-icon icon-blue"><i class="fa-solid fa-hospital"></i></div>
+            <div>
+              <h3 class="counter" data-target="350">0</h3>
+              <p>Verified Clinics</p>
+            </div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-icon icon-purple"><i class="fa-solid fa-user-doctor"></i></div>
+            <div>
+              <h3 class="counter" data-target="220">0</h3>
+              <p>Specialist Doctors</p>
+            </div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-icon icon-red"><i class="fa-solid fa-star"></i></div>
+            <div>
+              <h3><span class="counter" data-target="98">0</span>%</h3>
+              <p>Satisfaction Rate</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Accordion Section -->
+    <section class="faq-section" id="faq">
+      <div class="section-header">
+        <span class="sub-title">Got Questions?</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+      </div>
+      <div class="faq-accordion">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How do I order prescription medicines?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Simply upload a clear photo or PDF of your valid doctor's prescription. Our licensed pharmacist will review it within 15 minutes, confirm availability, and send a payment link for home delivery.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Are consultations covered by health insurance?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Yes! CommuCare partners with major national and private health insurance providers. You can enter your policy details during checkout to claim coverage.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How quick is emergency response booking?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Our emergency hotline connects instantly with nearby ambulance services and triage centers without requiring advance app booking.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Bar -->
+    <section class="newsletter-bar">
+      <div class="newsletter-info">
+        <i class="fa-regular fa-envelope"></i>
+        <div>
+          <h4>Stay Informed with Health Updates</h4>
+          <p>Get weekly health tips, epidemic alerts, and specialist columns directly in your inbox.</p>
+        </div>
+      </div>
+      <form class="newsletter-form" id="newsletterForm">
+        <input type="email" id="emailInput" placeholder="Enter your official email address" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- Interactive Modal -->
+  <div class="modal-overlay" id="infoModal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()">&times;</button>
+      <h3 id="modalTitle">Service Detail</h3>
+      <p id="modalBody">Description text goes here.</p>
+      <button class="btn btn-primary modal-action-btn" onclick="closeModal()">Got it</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <div class="footer-container">
+      <div class="footer-col brand-col">
+        <div class="logo footer-logo">
+          <div class="logo-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+          <span>CommuCare</span>
+        </div>
+        <p>Bridging the gap between communities and quality medical care through smart digital health solutions.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">&rsaquo; Home</a></li>
+          <li><a href="#services">&rsaquo; Pharmacy Services</a></li>
+          <li><a href="#services">&rsaquo; Teleconsultations</a></li>
+          <li><a href="#search">&rsaquo; Find a Specialist</a></li>
+          <li><a href="#faq">&rsaquo; Support & FAQs</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Legal & Compliance</h4>
+        <ul>
+          <li><a href="#" onclick="openModal('Privacy Policy', 'We comply strictly with Data Protection directives to keep your medical data secure.')">&rsaquo; Privacy Policy</a></li>
+          <li><a href="#" onclick="openModal('Terms of Service', 'By accessing CommuCare, you agree to our telemedicine service protocols.')">&rsaquo; Terms of Use</a></li>
+          <li><a href="#" onclick="openModal('HIPAA Compliance', 'All patient interactions and health records use 256-bit AES encryption.')">&rsaquo; Data Security</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <ul class="contact-info">
+          <li><i class="fa-solid fa-phone"></i> +233 (0) 30 212 3456</li>
+          <li><i class="fa-solid fa-envelope"></i> support@commucare.health</li>
+          <li><i class="fa-solid fa-location-dot"></i> Independence Avenue, Accra, Ghana</li>
+        </ul>
+        <div class="social-links">
+          <a href="#" class="social-btn facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="social-btn twitter" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" class="social-btn whatsapp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="#" class="social-btn youtube" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 CommuCare Health Technologies. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Helper function
+    const $ = (selector) => document.querySelector(selector);
+    const $$ = (selector) => document.querySelectorAll(selector);
+
+    // Mobile Menu Toggle
+    const menuToggle = $('#menuToggle');
+    const navMenu = $('#navMenu');
+
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      const icon = menuToggle.querySelector('i');
+      icon.classList.toggle('fa-bars');
+      icon.classList.toggle('fa-xmark');
+    });
+
+    // Close mobile nav when clicking link
+    $$('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        const icon = menuToggle.querySelector('i');
+        icon.classList.add('fa-bars');
+        icon.classList.remove('fa-xmark');
+      });
+    });
+
+    // Modal Operations
+    function openModal(title, text) {
+      $('#modalTitle').innerText = title;
+      $('#modalBody').innerText = text;
+      $('#infoModal').classList.add('active');
+    }
+
+    function closeModal() {
+      $('#infoModal').classList.remove('active');
+    }
+
+    $('#infoModal').addEventListener('click', (e) => {
+      if (e.target === $('#infoModal')) closeModal();
+    });
+
+    // Handle Search Action
+    function handleSearch() {
+      const query = $('#searchInput').value.trim();
+      const location = $('#locationSelect').value;
+      if (query || location) {
+        openModal('Search Results', `Searching for "${query || 'All Services'}" in ${location ? location.toUpperCase() : 'All Locations'}... We found 12 available healthcare providers.`);
+      } else {
+        openModal('Notice', 'Please enter a keyword or select a region to search.');
+      }
+    }
+
+    // FAQ Accordion Interaction
+    $$('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        const faqItem = button.parentElement;
+        const isOpen = faqItem.classList.contains('open');
+        
+        $$('.faq-item').forEach(item => item.classList.remove('open'));
+        
+        if (!isOpen) {
+          faqItem.classList.add('open');
+        }
+      });
+    });
+
+    // Animated Counter Stats on Scroll
+    let animated = false;
+    function animateCounters() {
+      const statsSection = $('#statsSection');
+      if (!statsSection) return;
+      const rect = statsSection.getBoundingClientRect();
+      
+      if (rect.top <= window.innerHeight && !animated) {
+        animated = true;
+        $$('.counter').forEach(counter => {
+          const target = +counter.getAttribute('data-target');
+          let count = 0;
+          const speed = target / 50;
+          
+          const updateCount = () => {
+            count += speed;
+            if (count < target) {
+              counter.innerText = Math.ceil(count).toLocaleString();
+              setTimeout(updateCount, 25);
+            } else {
+              counter.innerText = target.toLocaleString();
+            }
+          };
+          updateCount();
+        });
+      }
+    }
+
+    window.addEventListener('scroll', animateCounters);
+    window.addEventListener('load', animateCounters);
+
+    // Newsletter Submission
+    $('#newsletterForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = $('#emailInput').value;
+      if (email) {
+        openModal('Subscription Confirmed', `Thank you! Medical updates will be sent to ${email}.`);
+        $('#emailInput').value = '';
+      }
+    });
+  </script>
+</body>
+
+</html>
