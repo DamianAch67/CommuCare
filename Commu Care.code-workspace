@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": "../Commu Care"
+		},
+		{
+			"path": "../Health Connect"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": "../Vitalis"
+		},
+		{
+			"path": "../Community Health Connect"
+		}
+	],
+	"settings": {}
+}

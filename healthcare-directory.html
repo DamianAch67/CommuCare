@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Healthcare Directory | Community Health Connect
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="healthcare-directory.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+
+        <i class="fa-solid fa-heart-pulse"></i>
+
+        <span>
+            Community<span>Health</span> Connect
+        </span>
+
+    </div>
+
+
+    <nav class="nav-links">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="index.html#about">
+            About
+        </a>
+
+        <a href="index.html#services">
+            Services
+        </a>
+
+        <a href="pharmacy.html">
+            Pharmacy
+        </a>
+
+        <a href="health-hub.html">
+            Health Hub
+        </a>
+
+        <a
+            href="healthcare-directory.html"
+            class="active"
+        >
+            Directory
+        </a>
+
+    </nav>
+
+
+    <a
+        href="index.html#contact"
+        class="nav-btn"
+    >
+        Contact Us
+    </a>
+
+</header>
+
+
+
+<!-- ================= HERO ================= -->
+
+<section class="directory-hero">
+
+    <div class="directory-hero-content">
+
+        <span>
+            HEALTHCARE DIRECTORY
+        </span>
+
+        <h1>
+            Find Healthcare
+            <strong>Near You.</strong>
+        </h1>
+
+        <p>
+            Discover pharmacies, hospitals and clinics,
+            explore available services and find important
+            emergency contacts.
+        </p>
+
+        <a
+            href="#facilities"
+            class="directory-hero-btn"
+        >
+            Find a Facility
+
+            <i class="fa-solid fa-arrow-down"></i>
+
+        </a>
+
+    </div>
+
+
+    <div class="directory-hero-visual">
+
+        <div class="directory-map-icon">
+
+            <i class="fa-solid fa-location-dot"></i>
+
+        </div>
+
+
+        <div class="directory-floating-card directory-card-one">
+
+            <i class="fa-solid fa-hospital"></i>
+
+            <span>
+                Hospitals
+            </span>
+
+        </div>
+
+
+        <div class="directory-floating-card directory-card-two">
+
+            <i class="fa-solid fa-pills"></i>
+
+            <span>
+                Pharmacies
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= QUICK STATS ================= -->
+
+<section class="directory-stats">
+
+    <div class="directory-stat">
+
+        <i class="fa-solid fa-prescription-bottle-medical"></i>
+
+        <div>
+
+            <strong>
+                12+
+            </strong>
+
+            <span>
+                Partner Pharmacies
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="directory-stat">
+
+        <i class="fa-solid fa-hospital"></i>
+
+        <div>
+
+            <strong>
+                8+
+            </strong>
+
+            <span>
+                Hospitals & Clinics
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="directory-stat">
+
+        <i class="fa-solid fa-location-dot"></i>
+
+        <div>
+
+            <strong>
+                20+
+            </strong>
+
+            <span>
+                Healthcare Facilities
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="directory-stat">
+
+        <i class="fa-solid fa-phone-volume"></i>
+
+        <div>
+
+            <strong>
+                24/7
+            </strong>
+
+            <span>
+                Emergency Support
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FACILITIES ================= -->
+
+<section
+    class="directory-section"
+    id="facilities"
+>
+
+    <div class="section-heading">
+
+        <span>
+            FIND A FACILITY
+        </span>
+
+        <h2>
+            Healthcare Services
+            <strong>Within Reach</strong>
+        </h2>
+
+        <p>
+            Search and filter healthcare facilities
+            by name, type and location.
+        </p>
+
+    </div>
+
+
+    <!-- SEARCH -->
+
+    <div class="facility-controls">
+
+        <div class="facility-search">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+                type="text"
+                id="facilitySearch"
+                placeholder="Search facilities..."
+            >
+
+        </div>
+
+
+        <select id="facilityType">
+
+            <option value="all">
+                All Facility Types
+            </option>
+
+            <option value="pharmacy">
+                Pharmacy
+            </option>
+
+            <option value="hospital">
+                Hospital
+            </option>
+
+            <option value="clinic">
+                Clinic
+            </option>
+
+        </select>
+
+
+        <select id="facilityLocation">
+
+            <option value="all">
+                All Locations
+            </option>
+
+            <option value="Kumasi">
+                Kumasi
+            </option>
+
+            <option value="Accra">
+                Accra
+            </option>
+
+            <option value="Tema">
+                Tema
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <!-- FACILITY GRID -->
+
+    <div
+        class="facility-grid"
+        id="facilityGrid"
+    ></div>
+
+
+    <div
+        class="facility-empty"
+        id="facilityEmpty"
+    >
+
+        <i class="fa-solid fa-location-crosshairs"></i>
+
+        <h3>
+            No facilities found
+        </h3>
+
+        <p>
+            Try changing your search or filters.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= PHARMACIES ================= -->
+
+<section class="directory-section light-section">
+
+    <div class="section-heading">
+
+        <span>
+            PARTNER PHARMACIES
+        </span>
+
+        <h2>
+            Trusted Pharmacy
+            <strong>Partners</strong>
+        </h2>
+
+    </div>
+
+
+    <div class="partner-grid">
+
+
+        <article class="partner-card">
+
+            <div class="partner-icon">
+
+                <i class="fa-solid fa-prescription-bottle-medical"></i>
+
+            </div>
+
+            <span>
+                PHARMACY
+            </span>
+
+            <h3>
+                Community Care Pharmacy
+            </h3>
+
+            <p>
+                24 Health Street, Kumasi
+            </p>
+
+            <p>
+                <i class="fa-solid fa-phone"></i>
+                +233 24 000 0000
+            </p>
+
+            <p>
+                <i class="fa-solid fa-clock"></i>
+                Mon - Sat: 8:00 AM - 8:00 PM
+            </p>
+
+            <button
+                onclick="showFacility('Community Care Pharmacy')"
+            >
+                View Information
+            </button>
+
+        </article>
+
+
+        <article class="partner-card">
+
+            <div class="partner-icon">
+
+                <i class="fa-solid fa-prescription-bottle-medical"></i>
+
+            </div>
+
+            <span>
+                PHARMACY
+            </span>
+
+            <h3>
+                HealthFirst Pharmacy
+            </h3>
+
+            <p>
+                Adum, Kumasi
+            </p>
+
+            <p>
+                <i class="fa-solid fa-phone"></i>
+                +233 20 000 0000
+            </p>
+
+            <p>
+                <i class="fa-solid fa-clock"></i>
+                Mon - Sun: 8:00 AM - 9:00 PM
+            </p>
+
+            <button
+                onclick="showFacility('HealthFirst Pharmacy')"
+            >
+                View Information
+            </button>
+
+        </article>
+
+
+        <article class="partner-card">
+
+            <div class="partner-icon">
+
+                <i class="fa-solid fa-prescription-bottle-medical"></i>
+
+            </div>
+
+            <span>
+                PHARMACY
+            </span>
+
+            <h3>
+                Wellness Plus Pharmacy
+            </h3>
+
+            <p>
+                Ahodwo, Kumasi
+            </p>
+
+            <p>
+                <i class="fa-solid fa-phone"></i>
+                +233 27 000 0000
+            </p>
+
+            <p>
+                <i class="fa-solid fa-clock"></i>
+                Mon - Sat: 8:00 AM - 7:00 PM
+            </p>
+
+            <button
+                onclick="showFacility('Wellness Plus Pharmacy')"
+            >
+                View Information
+            </button>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= HOSPITALS ================= -->
+
+<section class="directory-section">
+
+    <div class="section-heading">
+
+        <span>
+            HOSPITALS & CLINICS
+        </span>
+
+        <h2>
+            Healthcare Facilities
+            <strong>For Your Community</strong>
+        </h2>
+
+    </div>
+
+
+    <div class="hospital-grid">
+
+
+        <article class="hospital-card">
+
+            <div class="hospital-icon">
+
+                <i class="fa-solid fa-hospital"></i>
+
+            </div>
+
+
+            <div class="hospital-info">
+
+                <span>
+                    HOSPITAL
+                </span>
+
+                <h3>
+                    Community General Hospital
+                </h3>
+
+                <p>
+                    Emergency Care • Outpatient Services
+                    • Pharmacy • Laboratory
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Kumasi
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    +233 25 000 0000
+                </p>
+
+            </div>
+
+
+            <button
+                onclick="showFacility('Community General Hospital')"
+            >
+                View
+            </button>
+
+        </article>
+
+
+        <article class="hospital-card">
+
+            <div class="hospital-icon">
+
+                <i class="fa-solid fa-hospital"></i>
+
+            </div>
+
+
+            <div class="hospital-info">
+
+                <span>
+                    CLINIC
+                </span>
+
+                <h3>
+                    Family Health Clinic
+                </h3>
+
+                <p>
+                    General Consultation • Maternal Health
+                    • Laboratory
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Accra
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    +233 26 000 0000
+                </p>
+
+            </div>
+
+
+            <button
+                onclick="showFacility('Family Health Clinic')"
+            >
+                View
+            </button>
+
+        </article>
+
+
+        <article class="hospital-card">
+
+            <div class="hospital-icon">
+
+                <i class="fa-solid fa-hospital"></i>
+
+            </div>
+
+
+            <div class="hospital-info">
+
+                <span>
+                    HOSPITAL
+                </span>
+
+                <h3>
+                    Regional Medical Centre
+                </h3>
+
+                <p>
+                    Emergency Care • Surgery • Diagnostics
+                    • Specialist Services
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Tema
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    +233 23 000 0000
+                </p>
+
+            </div>
+
+
+            <button
+                onclick="showFacility('Regional Medical Centre')"
+            >
+                View
+            </button>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= EMERGENCY ================= -->
+
+<section class="emergency-section">
+
+    <div class="emergency-heading">
+
+        <span>
+            EMERGENCY CONTACTS
+        </span>
+
+        <h2>
+            Need Help
+            <strong>Right Now?</strong>
+        </h2>
+
+        <p>
+            Keep important emergency contacts accessible
+            when every second matters.
+        </p>
+
+    </div>
+
+
+    <div class="emergency-grid">
+
+
+        <a
+            href="tel:112"
+            class="emergency-card"
+        >
+
+            <div class="emergency-icon">
+
+                <i class="fa-solid fa-truck-medical"></i>
+
+            </div>
+
+            <div>
+
+                <span>
+                    AMBULANCE
+                </span>
+
+                <strong>
+                    112
+                </strong>
+
+            </div>
+
+            <i class="fa-solid fa-phone"></i>
+
+        </a>
+
+
+        <a
+            href="tel:112"
+            class="emergency-card"
+        >
+
+            <div class="emergency-icon">
+
+                <i class="fa-solid fa-fire-extinguisher"></i>
+
+            </div>
+
+            <div>
+
+                <span>
+                    FIRE SERVICE
+                </span>
+
+                <strong>
+                    112
+                </strong>
+
+            </div>
+
+            <i class="fa-solid fa-phone"></i>
+
+        </a>
+
+
+        <a
+            href="tel:112"
+            class="emergency-card"
+        >
+
+            <div class="emergency-icon">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+            </div>
+
+            <div>
+
+                <span>
+                    POLICE
+                </span>
+
+                <strong>
+                    112
+                </strong>
+
+            </div>
+
+            <i class="fa-solid fa-phone"></i>
+
+        </a>
+
+
+        <a
+            href="tel:0302666917"
+            class="emergency-card"
+        >
+
+            <div class="emergency-icon">
+
+                <i class="fa-solid fa-skull-crossbones"></i>
+
+            </div>
+
+            <div>
+
+                <span>
+                    POISON INFORMATION
+                </span>
+
+                <strong>
+                    Poison Centre
+                </strong>
+
+            </div>
+
+            <i class="fa-solid fa-phone"></i>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= MAP ================= -->
+
+<section class="directory-section map-section">
+
+    <div class="section-heading">
+
+        <span>
+            INTERACTIVE MAP
+        </span>
+
+        <h2>
+            Locate Healthcare
+            <strong>Facilities</strong>
+        </h2>
+
+        <p>
+            Explore the map area to identify healthcare
+            locations in the community.
+        </p>
+
+    </div>
+
+
+    <div class="map-container">
+
+        <!-- Placeholder map for this stage -->
+
+        <div class="placeholder-map">
+
+            <div class="map-grid"></div>
+
+
+            <div class="map-pin pin-one">
+
+                <i class="fa-solid fa-prescription-bottle-medical"></i>
+
+            </div>
+
+
+            <div class="map-pin pin-two">
+
+                <i class="fa-solid fa-hospital"></i>
+
+            </div>
+
+
+            <div class="map-pin pin-three">
+
+                <i class="fa-solid fa-hospital"></i>
+
+            </div>
+
+
+            <div class="map-center">
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                <span>
+                    Healthcare Locations
+                </span>
+
+            </div>
+
+
+            <div class="map-legend">
+
+                <div>
+
+                    <i class="fa-solid fa-prescription-bottle-medical"></i>
+
+                    Pharmacy
+
+                </div>
+
+                <div>
+
+                    <i class="fa-solid fa-hospital"></i>
+
+                    Hospital / Clinic
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FACILITY MODAL ================= -->
+
+<div
+    class="facility-modal"
+    id="facilityModal"
+>
+
+    <div class="facility-modal-box">
+
+        <button
+            class="facility-modal-close"
+            onclick="closeFacility()"
+        >
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+        <div
+            class="facility-modal-icon"
+            id="facilityModalIcon"
+        >
+
+            <i class="fa-solid fa-hospital"></i>
+
+        </div>
+
+
+        <span id="facilityModalType">
+            HEALTHCARE FACILITY
+        </span>
+
+
+        <h2 id="facilityModalTitle">
+            Facility Name
+        </h2>
+
+
+        <div class="facility-modal-details">
+
+            <div>
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                <span id="facilityModalAddress">
+                    Address
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <i class="fa-solid fa-phone"></i>
+
+                <span id="facilityModalPhone">
+                    Phone
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <i class="fa-solid fa-clock"></i>
+
+                <span id="facilityModalHours">
+                    Opening Hours
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <i class="fa-solid fa-stethoscope"></i>
+
+                <span id="facilityModalServices">
+                    Services
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <a
+            href="#"
+            id="facilityCallButton"
+            class="facility-call-button"
+        >
+
+            <i class="fa-solid fa-phone"></i>
+
+            Call Facility
+
+        </a>
+
+    </div>
+
+</div>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-logo">
+
+        <i class="fa-solid fa-heart-pulse"></i>
+
+        Community Health Connect
+
+    </div>
+
+    <p>
+        Connecting communities with trusted healthcare resources.
+    </p>
+
+    <p class="copyright">
+        © 2026 Community Health Connect. All rights reserved.
+    </p>
+
+</footer>
+
+
+
+<script src="healthcare-directory.js"></script>
+
+</body>
+
+</html>

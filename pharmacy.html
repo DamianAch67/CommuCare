@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pharmacy & Consultation | Community Health Connect</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pharmacy.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+</head>
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+
+        <i class="fa-solid fa-heart-pulse"></i>
+
+        <span>
+            Community<span>Health</span> Connect
+        </span>
+
+    </div>
+
+
+    <nav class="nav-links">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="index.html#about">
+            About
+        </a>
+
+        <a href="index.html#services">
+            Services
+        </a>
+
+        <a href="pharmacy.html" class="active">
+            Pharmacy
+        </a>
+
+        <a href="index.html#campaign">
+            Campaigns
+        </a>
+
+        <a href="#consultation">
+            Consultation
+        </a>
+
+    </nav>
+
+
+    <a href="#consultation" class="nav-btn">
+        Consult a Pharmacist
+    </a>
+
+</header>
+
+
+
+<!-- ================= PAGE HERO ================= -->
+
+<section class="page-hero">
+
+    <div>
+
+        <span>
+            PHARMACY & CONSULTATION
+        </span>
+
+        <h1>
+            Healthcare Guidance,
+            <strong>Made Accessible.</strong>
+        </h1>
+
+        <p>
+            Explore medicine information and request a
+            consultation with a pharmacist.
+        </p>
+
+    </div>
+
+    <div class="page-hero-icon">
+
+        <i class="fa-solid fa-prescription-bottle-medical"></i>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= MEDICINE SECTION ================= -->
+
+<section class="pharmacy-section">
+
+    <div class="section-heading">
+
+        <span>
+            PHARMACY
+        </span>
+
+        <h2>
+            Explore <strong>Medicines</strong>
+        </h2>
+
+        <p>
+            Search medicines by name or browse them by category.
+        </p>
+
+    </div>
+
+
+
+    <!-- SEARCH -->
+
+    <div class="medicine-controls">
+
+        <div class="medicine-search">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+                type="text"
+                id="medicineSearch"
+                placeholder="Search medicines..."
+            >
+
+        </div>
+
+
+        <select id="categoryFilter">
+
+            <option value="all">
+                All Categories
+            </option>
+
+            <option value="Pain Relief">
+                Pain Relief
+            </option>
+
+            <option value="Antibiotics">
+                Antibiotics
+            </option>
+
+            <option value="Vitamins">
+                Vitamins
+            </option>
+
+            <option value="Children's Medicines">
+                Children's Medicines
+            </option>
+
+            <option value="First Aid">
+                First Aid
+            </option>
+
+            <option value="Supplements">
+                Supplements
+            </option>
+
+        </select>
+
+    </div>
+
+
+
+    <!-- MEDICINE CARDS -->
+
+    <div
+        class="pharmacy-medicine-grid"
+        id="medicineGrid"
+    >
+
+        <!-- JavaScript generates cards -->
+
+    </div>
+
+
+    <div
+        class="no-results"
+        id="noResults"
+    >
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <h3>
+            No medicines found
+        </h3>
+
+        <p>
+            Try another medicine name or category.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= MEDICINE MODAL ================= -->
+
+<div
+    class="medicine-modal"
+    id="medicineModal"
+>
+
+    <div class="modal-box">
+
+        <button
+            class="modal-close"
+            id="modalClose"
+            aria-label="Close"
+        >
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+        <div class="modal-icon">
+
+            <i class="fa-solid fa-pills"></i>
+
+        </div>
+
+
+        <span id="modalCategory">
+            CATEGORY
+        </span>
+
+
+        <h2 id="modalName">
+            Medicine Name
+        </h2>
+
+
+        <p id="modalDescription">
+            Medicine description.
+        </p>
+
+
+        <div class="medicine-details">
+
+            <div>
+
+                <strong>
+                    Uses
+                </strong>
+
+                <p id="modalUses"></p>
+
+            </div>
+
+
+            <div>
+
+                <strong>
+                    Dosage
+                </strong>
+
+                <p id="modalDosage"></p>
+
+            </div>
+
+
+            <div>
+
+                <strong>
+                    Precautions
+                </strong>
+
+                <p id="modalPrecautions"></p>
+
+            </div>
+
+
+            <div>
+
+                <strong>
+                    Possible Side Effects
+                </strong>
+
+                <p id="modalSideEffects"></p>
+
+            </div>
+
+        </div>
+
+
+        <div class="modal-warning">
+
+            <i class="fa-solid fa-circle-info"></i>
+
+            <span>
+                This information is for educational purposes and
+                does not replace professional medical advice.
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- ================= PHARMACISTS ================= -->
+
+<section class="pharmacists pharmacy-section">
+
+    <div class="section-heading">
+
+        <span>
+            OUR PHARMACISTS
+        </span>
+
+        <h2>
+            Meet Our <strong>Pharmacists</strong>
+        </h2>
+
+        <p>
+            Connect with qualified professionals for
+            healthcare guidance.
+        </p>
+
+    </div>
+
+
+    <div class="pharmacist-grid">
+
+
+        <article class="pharmacist-card">
+
+            <div class="pharmacist-photo">
+                <i class="fa-solid fa-user-doctor"></i>
+            </div>
+
+            <h3>
+                Dr. Ama Mensah
+            </h3>
+
+            <span>
+                PharmD
+            </span>
+
+            <div class="pharmacist-info">
+
+                <p>
+                    <strong>Experience:</strong>
+                    8 Years
+                </p>
+
+                <p>
+                    <strong>Practice:</strong>
+                    Community Pharmacy
+                </p>
+
+            </div>
+
+            <button
+                onclick="scrollToConsultation()"
+            >
+                Request Consultation
+            </button>
+
+        </article>
+
+
+
+        <article class="pharmacist-card">
+
+            <div class="pharmacist-photo">
+                <i class="fa-solid fa-user-doctor"></i>
+            </div>
+
+            <h3>
+                Mr. Daniel Owusu
+            </h3>
+
+            <span>
+                B.Pharm
+            </span>
+
+            <div class="pharmacist-info">
+
+                <p>
+                    <strong>Experience:</strong>
+                    6 Years
+                </p>
+
+                <p>
+                    <strong>Practice:</strong>
+                    Clinical Pharmacy
+                </p>
+
+            </div>
+
+            <button
+                onclick="scrollToConsultation()"
+            >
+                Request Consultation
+            </button>
+
+        </article>
+
+
+
+        <article class="pharmacist-card">
+
+            <div class="pharmacist-photo">
+                <i class="fa-solid fa-user-doctor"></i>
+            </div>
+
+            <h3>
+                Ms. Grace Boateng
+            </h3>
+
+            <span>
+                PharmD
+            </span>
+
+            <div class="pharmacist-info">
+
+                <p>
+                    <strong>Experience:</strong>
+                    10 Years
+                </p>
+
+                <p>
+                    <strong>Practice:</strong>
+                    Public Health
+                </p>
+
+            </div>
+
+            <button
+                onclick="scrollToConsultation()"
+            >
+                Request Consultation
+            </button>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= CONSULTATION ================= -->
+
+<section
+    class="consultation-section"
+    id="consultation"
+>
+
+    <div class="consultation-wrapper">
+
+
+        <div class="consultation-intro">
+
+            <span>
+                PHARMACIST CONSULTATION
+            </span>
+
+            <h2>
+                Get Professional
+                <strong>Guidance</strong>
+            </h2>
+
+            <p>
+                Submit your information and a pharmacist can
+                review your request.
+            </p>
+
+
+            <div class="consultation-points">
+
+                <div>
+
+                    <i class="fa-solid fa-shield-heart"></i>
+
+                    <span>
+                        Your information is handled responsibly.
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <i class="fa-solid fa-user-doctor"></i>
+
+                    <span>
+                        Consultation requests are reviewed by pharmacists.
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <i class="fa-solid fa-circle-info"></i>
+
+                    <span>
+                        This service does not replace emergency care.
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- FORM -->
+
+        <form
+            id="consultationForm"
+            class="consultation-form"
+        >
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label for="fullName">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="fullName"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="age">
+                        Age
+                    </label>
+
+                    <input
+                        type="number"
+                        id="age"
+                        min="1"
+                        max="120"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label for="gender">
+                        Gender
+                    </label>
+
+                    <select id="gender" required>
+
+                        <option value="">
+                            Select
+                        </option>
+
+                        <option value="Male">
+                            Male
+                        </option>
+
+                        <option value="Female">
+                            Female
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="phone">
+                        Phone Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+
+            <div class="form-group">
+
+                <label for="email">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    required
+                >
+
+            </div>
+
+
+
+            <div class="form-group">
+
+                <label for="symptoms">
+                    Symptoms
+                </label>
+
+                <textarea
+                    id="symptoms"
+                    maxlength="500"
+                    required
+                ></textarea>
+
+                <div class="character-count">
+
+                    <span id="symptomCount">
+                        0
+                    </span>
+
+                    / 500
+
+                </div>
+
+            </div>
+
+
+
+            <div class="form-group">
+
+                <label for="duration">
+                    Duration of Symptoms
+                </label>
+
+                <input
+                    type="text"
+                    id="duration"
+                    placeholder="e.g. 3 days"
+                    required
+                >
+
+            </div>
+
+
+
+            <div class="form-group">
+
+                <label for="medication">
+                    Current Medication
+                </label>
+
+                <textarea
+                    id="medication"
+                    placeholder="List any medicines you currently take"
+                ></textarea>
+
+            </div>
+
+
+
+            <div class="form-group">
+
+                <label for="allergies">
+                    Allergies
+                </label>
+
+                <textarea
+                    id="allergies"
+                    placeholder="List any known allergies"
+                ></textarea>
+
+            </div>
+
+
+
+            <button
+                type="submit"
+                class="submit-consultation"
+            >
+
+                Submit Consultation Request
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </button>
+
+
+            <div
+                class="form-message"
+                id="formMessage"
+            ></div>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-logo">
+
+        <i class="fa-solid fa-heart-pulse"></i>
+
+        Community Health Connect
+
+    </div>
+
+    <p>
+        Connecting communities with trusted healthcare resources.
+    </p>
+
+    <p class="copyright">
+        © 2026 Community Health Connect. All rights reserved.
+    </p>
+
+</footer>
+
+
+
+<script src="pharmacy.js"></script>
+
+</body>
+
+</html>
